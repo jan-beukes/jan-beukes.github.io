@@ -2,8 +2,8 @@ name: Fetch NASA image of the day
 
 on:
   schedule:
-    # Every day at 12AM
-    - cron: '0 0 * * *'
+    # Every day at 6AM
+    - cron: '0 6 * * *'
   workflow_dispatch: # Allows manual trigger
 
 permissions:
