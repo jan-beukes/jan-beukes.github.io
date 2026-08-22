@@ -1,5 +1,12 @@
-mkdir -p ~/nfs-home
-sshfs 28087887@bach.sun.ac.za:/home/28087887 ~/nfs-home
-~/nfs-home/cs-stow.sh ~/nfs-home --backup
-ln -s ~/nfs-home/Projects ~/
-ln -s ~/nfs-home/Software ~/
+NFS_HOME=~/nfs-home
+
+mkdir -p $NFS_HOME
+sshfs $USER@bach.sun.ac.za:/home/$USER $NFS_HOME
+$NFS_HOME/cs-stow.sh $NFS_HOME --backup
+
+echo "Running custom symlinks in link.sh"
+if [[ -e $NFS_HOME/link.sh ]]; then
+    $NFS_HOME/link.sh
+fi
+
+echo -e "\033[32mDONE\033[m"

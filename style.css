@@ -1,0 +1,53 @@
+:root {
+  --background: #282828;
+  --darkblue: #0d2b45;
+  --blue: #203c56;
+  --purple: #544e68;
+  --pink: #8d697a;
+  --darkorange: #d08159;
+  --orange: #ffaa5e;
+  --peach: #ffd4a3;
+  --white: #ffecd6;
+  
+  color: var(--white);
+}
+
+h1 {
+  font-size: 48px;
+  margin: 0px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+}
+
+a {
+  text-decoration: none;
+  color: var(--pink)
+}
+
+canvas {
+  border: 2px solid var(--peach);
+  width:  60em;
+  height: 50em;
+}
+
+.profile-links {
+  font-size: 24px;
+}
+
+.content {
+  padding: 25px;
+  font-size: 18px;
+}
+
+#image-title {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 5px;
+}
+
