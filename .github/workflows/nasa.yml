@@ -1,0 +1,38 @@
+name: Fetch NASA image of the day
+
+on:
+  schedule:
+    # Every day at 12AM
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch image of the day
+        env:
+          NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
+        run: |
+          curl -s "https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}" -o nasa.json
+
+      - name: Commit and Push as Bot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          git add nasa.json
+          
+          # Only commit if the json file actually changed
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: auto-update nasa.json from server"
+            git push
+          else
+            echo "No changes detected in nasa.json"
+          fi

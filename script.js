@@ -1,7 +1,7 @@
 function getImageOfTheDay() {
   let image = new Image();
   // TODO: maybe get from https://api.nasa.gov
-  const url = "http://172.209.216.106:8000/nasa.json"
+  const url = "./nasa.json"
   fetch(url)
     .then((response) => {
       if (!response.ok) {
