@@ -13,8 +13,8 @@
 }
 
 h1 {
-  font-size: 48px;
-  margin: 0px;
+  font-size: 40pt;
+  margin: 0pt;
 }
 
 body {
@@ -31,23 +31,23 @@ a {
 }
 
 canvas {
-  border: 2px solid var(--peach);
+  border: 2pt solid var(--peach);
   width:  50em;
   height: 40em;
 }
 
-.profile-links {
-  font-size: 24px;
+#profile-links {
+  font-size: 18pt;
 }
 
 .content {
-  padding: 25px;
-  font-size: 18px;
+  padding: 16pt;
+  font-size: 16pt;
 }
 
 #image-title {
-  font-size: 30px;
+  font-size: 20pt;
   font-weight: bold;
-  padding: 5px;
+  padding: 10pt;
 }
 
