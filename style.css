@@ -29,11 +29,25 @@ a {
   text-decoration: none;
   color: var(--pink)
 }
+a:hover {
+  text-decoration: underline 2px;
+}
 
-canvas {
-  border: 2pt solid var(--peach);
+#container {
+  margin: 10pt;
   width:  50em;
   height: 40em;
+}
+
+.media {
+  width: 100%;
+  height: 100%;
+  border: 2pt solid var(--peach);
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none !important;
 }
 
 #profile-links {
@@ -45,9 +59,13 @@ canvas {
   font-size: 16pt;
 }
 
-#image-title {
-  font-size: 20pt;
-  font-weight: bold;
-  padding: 10pt;
+#image-title:hover {
+  text-decoration: underline 2px;
+  color: var(--peach);
 }
 
+#image-title {
+  color: var(--peach);
+  font-size: 20pt;
+  font-weight: bold;
+}
