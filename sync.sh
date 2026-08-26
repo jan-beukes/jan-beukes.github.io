@@ -1,7 +1,7 @@
 NFS_HOME=~/nfs-home
-
+ME=$(whoami)
 mkdir -p $NFS_HOME
-sshfs $USER@bach.sun.ac.za:/home/$USER $NFS_HOME
+sshfs $USER@bach.sun.ac.za:/home/$ME $NFS_HOME
 $NFS_HOME/cs-stow.sh $NFS_HOME --backup
 
 echo "Running custom symlinks in link.sh"
