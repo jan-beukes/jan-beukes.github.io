@@ -5,7 +5,7 @@ sshfs $ME@bach.sun.ac.za:/home/$ME $NFS_HOME
 $NFS_HOME/cs-stow.sh $NFS_HOME --backup
 
 echo "Running custom symlinks in link.sh"
-if [[ -e $NFS_HOME/link.sh ]]; then
+if [ -e $NFS_HOME/link.sh ]; then
     $NFS_HOME/link.sh
 fi
 
