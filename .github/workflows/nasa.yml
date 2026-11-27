@@ -25,6 +25,7 @@ jobs:
           --retry-delay 2 \
           --retry-all-errors \
           "https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}" \
+          -o nasa.json
 
       - name: Commit and Push as Bot
         run: |
