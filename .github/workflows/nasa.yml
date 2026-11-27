@@ -20,11 +20,11 @@ jobs:
         env:
           NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
         run: |
-          curl -s "https://api.nasa.gov/planetary/apod?api_key=${nasa_api_key}" -o nasa.json
-          while grep -qP '"code":\s*500' nasa.json; do
-              sleep 2
-              curl -s "https://api.nasa.gov/planetary/apod?api_key=${nasa_api_key}" -o nasa.json
-          done
+          curl -f -s -S \
+          --retry 5 \
+          --retry-delay 2 \
+          --retry-all-errors \
+          "https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}" \
 
       - name: Commit and Push as Bot
         run: |
